@@ -29,13 +29,13 @@ func main() {
 }
 
 func hopChannel(iwInterface string) {
-	currentChannel := 0
+	currentChannel := 1
 	for {
 		time.Sleep(time.Millisecond * 10)
 		err := utils.IwModChannel(iwInterface, currentChannel)
 		utils.PanicError(err)
 
-		currentChannel = (currentChannel + 1) % channel_num_max
+		currentChannel = (currentChannel % channel_num_max) + 1
 	}
 }
 
