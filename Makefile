@@ -1,4 +1,4 @@
-NAME=main.out
+NAME=airodump
 
 all: deps build
 
